@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    class Car{
+        constructor(brand, model, year, color, price){
+            this.brand = brand
+            this.model = model
+            this.year = year
+            this.color = color
+            this.price = price
+        }
+    getBrand(){
+        return this.brand
+    }
+    getModel(){
+        return this.model
+    }
+    getYear(){
+        return this.year
+    }
+    getColor(){
+        return this.color
+    }
+    getPrice(){
+        return this.price
+    }
+    changePrice(newPrice){
+        return this.price = newPrice
+    }
+    changeColor(newColor){
+       return this.color = newColor
+    }
+
+ }
+ const instance1 = new Car('Toyota', 'Camry', 2015, 7000000, 'silver')
+ const instance2 = new Car('Honda','Civic',2018, 8000000, 'Black')
+ const instance3 = new Car('Mercedes-Benz', 'C-class','2020','25000000', 'White')
+ const instance4 = new Car('Ford', 'Ranger','2017','12000000', 'Red')
+ console.log(instance4.getPrice())
+ console.log(instance4.getBrand())
+ console.log(instance4.getModel())
+ console.log(instance4.getColor())
+ console.log(instance4.getYear())
+ instance1.changePrice(2000000)
+ console.log(instance1.getPrice())
+ instance4.changeColor('Purple')
+ console.log(instance4.getColor())
+
+    
+    </script>
+</body>
+</html>
