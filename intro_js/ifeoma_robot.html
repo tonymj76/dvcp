@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Robot {
+            constructor() {
+                this.energy = 50
+            }
+            work(){
+              this.energy -= 10
+              if(this.energy < 0){
+                this.energy = 0
+              }
+              return this.energy
+            }
+            recharge(){
+                this.energy += 20
+                if(this.energy > 100){
+                    this.energy = 100
+                }
+                return this.energy
+            }
+        }
+       const instance1 = new Robot()
+       /* console.log(instance1.recharge())
+        console.log(instance1.recharge())
+        console.log(instance1.recharge())
+        console.log(instance1.recharge())
+        console.log(instance1.recharge())
+        console.log(instance1.recharge())*/
+
+        console.log(instance1.work())
+        console.log(instance1.work())
+        console.log(instance1.work())
+        console.log(instance1.work())
+        console.log(instance1.work())
+        console.log(instance1.work())
+
+</script>
+</body>
+</html>
