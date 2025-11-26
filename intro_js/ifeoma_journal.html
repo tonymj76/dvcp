@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Journal {
+            constructor() {
+                this.entries = [
+                    {
+                        Title: 'My Favourite Breakfast',
+                        Body: 'I Lovestarting my day with a plate of scrambled eggs and toast. it is a simple and light breakfast but delicious',
+                        Date: '2024-09-01'
+                    },
+                {
+                        Title: 'Trying Nigerian Jollof Rice',
+                        Body: 'I tried jollof rice today for the first time and it wwas amazing, the blend of spices was amazing',
+                        Date: '2024-09-11'
+                    },
+                    {
+                        Title: 'Pizza night with friends',
+                        Body: 'Had pizza night with my friends today and it was so amazing. we even tried out new recipes for extra cheese',
+                        Date: '2024-10-01'
+                    },
+                    {
+                        Title: 'Cooking suya',
+                        Body: 'I cooked suya(grilled meat)for the first time and it turned out great! the marinade made all the differences',
+                        Date: '2024-11-01'
+                    }
+                ]
+            }
+        add(newEntry){
+            this.entries.push(newEntry)
+            return{
+                Entries:this.entries,
+                Count: this.counter()
+            }
+        }
+        remove(index){
+            if(this.entries.at(index) === undefined){
+                return 'Invalid Index'
+            }
+            this.entries.splice(index, 1)
+             return{
+                Entries:this.entries,
+                Count: this.counter()
+            }
+        }
+        counter(){
+            return this.entries.length
+        }
+        }
+        const instance = new Journal
+        console.log(instance.add({
+                        Title: 'Baking cake',
+                        Body: 'I baked my first cake today and it was so delicious ',
+                        Date: '2024-11-01'
+                    }))
+         console.log(instance.remove(4))
+         console.log(instance.add({
+                        Title: 'Preparing soup',
+                        Body: 'Today i prepared a very delicious stew ',
+                        Date: '2024-12-01'
+                    }))
+         console.log(instance.add({
+                        Title: 'Picnic',
+                        Body: 'I had a beautiful picnic with friends ',
+                        Date: '2024-12-01'
+                    }))
+
+    
+    </script>
+</body>
+</html>
