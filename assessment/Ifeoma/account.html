@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Account {
+            constructor() {
+                this.balance = 0
+            }
+        deposit(amountDeposited){
+        this.balance += amountDeposited
+        return this.balance
+        }
+    withdraw(amountWithdrawn){
+        if(amountWithdrawn > this.balance){
+            return 'Insufficient funds '
+        }else{
+        this.balance -= amountWithdrawn
+        return this.balance 
+        }
+    }
+    }
+    class SavingsAccount extends Account{
+        constructor(){
+            super()
+            this.annualInterest = 0.05
+        }
+    applyInterest(){
+        const interest = this.balance * this.annualInterest
+        this.balance += interest
+        return this.balance
+    }
+    }
+    const instance1 = new Account
+    console.log(instance1.deposit(50000))
+    const instance2 = new SavingsAccount()
+    instance2.deposit(30000)
+    console.log(instance2.applyInterest())
+    </script>
+</body>
+</html>
